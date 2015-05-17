@@ -58,26 +58,7 @@ What is the average daily activity pattern?
 # mean for all the steps taken at that interval across all the observed days
 
 library(dplyr); library(ggplot2)
-```
 
-```
-## Warning: package 'dplyr' was built under R version 3.1.3
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following object is masked from 'package:stats':
-## 
-##     filter
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 x <- aggregate(steps~interval,data=data,mean)
 
 qplot(interval, steps, data = x, geom = "line")
@@ -187,7 +168,7 @@ Are there differences in activity patterns between weekdays and weekends?
 dataimputed2 <- mutate(dataimputed, day = factor(weekdays(date)), daytype = factor(ifelse(day =='Saturday' | day =='Sunday','weekend','weekday')))
 ```
 
-- Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
+- Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 
 
 ```r

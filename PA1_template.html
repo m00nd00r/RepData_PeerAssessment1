@@ -256,24 +256,8 @@ with(totalsbydate, hist(steps, breaks = 15))
 # mean for all the steps taken at that interval across all the observed days
 
 library(dplyr); library(ggplot2)
-</code></pre>
 
-<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.1.3
-</code></pre>
-
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;
-## 
-## The following object is masked from &#39;package:stats&#39;:
-## 
-##     filter
-## 
-## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union
-</code></pre>
-
-<pre><code class="r">x &lt;- aggregate(steps~interval,data=data,mean)
+x &lt;- aggregate(steps~interval,data=data,mean)
 
 qplot(interval, steps, data = x, geom = &quot;line&quot;)
 </code></pre>
@@ -377,7 +361,7 @@ with(totalsbydate2, hist(steps, breaks = 15))
 </code></pre>
 
 <ul>
-<li>Make a panel plot containing a time series plot (i.e. type = &ldquo;l&rdquo;) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.</li>
+<li>Make a panel plot containing a time series plot (i.e. type = &ldquo;l&rdquo;) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).</li>
 </ul>
 
 <pre><code class="r">meanstepsbydaytype&lt;-aggregate(steps~daytype + interval, data=dataimputed2, mean)
